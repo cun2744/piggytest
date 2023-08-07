@@ -31,7 +31,6 @@ services:
       - test
 
   account-mongodb:
-    container_name: account-mongodb
     environment:
       INIT_DUMP: account-service-dump.js
       MONGODB_PASSWORD: $MONGODB_PASSWORD
@@ -52,6 +51,24 @@ services:
       - 7000:7000
     networks:
       - test
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "10"
+
+    
+  statistics-mongodb:
+    environment:
+      MONGODB_PASSWORD: $MONGODB_PASSWORD
+    build: statistics-mongodb
+    restart: always
+    networks:
+      - test
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "10"
+
 
     
     
