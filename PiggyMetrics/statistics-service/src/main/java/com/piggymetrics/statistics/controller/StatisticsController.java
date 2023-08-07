@@ -19,15 +19,13 @@ public class StatisticsController {
 
 	@RequestMapping(value = "/current", method = RequestMethod.GET)
 	public List<DataPoint> getCurrentAccountStatistics(Principal principal) {
-        return "current";
-		// return statisticsService.findByAccountName(principal.getName());
+		return statisticsService.findByAccountName(principal.getName());
 	}
 
 	//@PreAuthorize("#oauth2.hasScope('server') or #accountName.equals('demo')")
 	@RequestMapping(value = "/{accountName}", method = RequestMethod.GET)
 	public List<DataPoint> getStatisticsByAccountName(@PathVariable String accountName) {
-        return "Hello and welcome!";
-		// return statisticsService.findByAccountName(accountName);
+		return statisticsService.findByAccountName(accountName);
 	}
 
 	//@PreAuthorize("#oauth2.hasScope('server')")
