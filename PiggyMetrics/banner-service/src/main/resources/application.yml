@@ -1,0 +1,4 @@
+server:
+  servlet:
+    context-path: /banners
+  port: 9090

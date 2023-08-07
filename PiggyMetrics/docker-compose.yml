@@ -1,0 +1,59 @@
+version: '2.1'
+services:
+  front:
+    container_name: front
+    build: front
+    restart: always
+    ports:
+      - 80:4000
+    networks:
+      - test
+
+  banner-service:
+    container_name: banners
+    build: banner-service
+    restart: always
+    ports:
+      - 9090:9090
+    networks:
+      - test
+
+  account-service:
+    container_name: accounts
+    environment:
+      ACCOUNT_SERVICE_PASSWORD: $ACCOUNT_SERVICE_PASSWORD
+      MONGODB_PASSWORD: $MONGODB_PASSWORD
+    build: account-service
+    restart: always
+    ports:
+      - 6000:6000
+    networks:
+      - test
+
+  account-mongodb:
+    environment:
+      INIT_DUMP: account-service-dump.js
+      MONGODB_PASSWORD: $MONGODB_PASSWORD
+    build: mongodb
+    restart: always
+    networks:
+      - test
+
+  statistics-service:
+    container_name: statistics
+    environment:
+      CONFIG_SERVICE_PASSWORD: $CONFIG_SERVICE_PASSWORD
+      MONGODB_PASSWORD: $MONGODB_PASSWORD
+      STATISTICS_SERVICE_PASSWORD: $STATISTICS_SERVICE_PASSWORD
+    restart: always
+    build: statistics-service
+    ports:
+      - 7000:7000
+    networks:
+      - test
+
+    
+    
+networks:
+  test:
+    name: test
