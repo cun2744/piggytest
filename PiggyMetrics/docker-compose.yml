@@ -6,7 +6,8 @@ services:
     restart: always
     ports:
       - 80:4000
-    networks: project_network
+    networks:
+      - project_network
 
   banner-service:
     container_name: banners
@@ -14,7 +15,8 @@ services:
     restart: always
     ports:
       - 9090:9090
-    networks: project_network
+    networks:
+      - project_network
 
   account-service:
     container_name: accounts
@@ -25,7 +27,8 @@ services:
     restart: always
     ports:
       - 6000:6000
-    networks: project_network
+    networks:
+      - project_network
 
   account-mongodb:
     environment:
@@ -33,7 +36,8 @@ services:
       MONGODB_PASSWORD: $MONGODB_PASSWORD
     build: mongodb
     restart: always
-    networks: project_network
+    networks:
+      - project_network
 
   statistics-service:
     container_name: statistics
@@ -45,7 +49,8 @@ services:
     build: statistics-service
     ports:
       - 7000:7000
-    networks: project_network
+    networks:
+      - project_network
 
     
     
