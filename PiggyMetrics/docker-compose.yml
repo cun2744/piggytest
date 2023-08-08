@@ -34,7 +34,7 @@ services:
     environment:
       INIT_DUMP: account-service-dump.js
       MONGODB_PASSWORD: $MONGODB_PASSWORD
-    build: mongodb
+    image: sqshq/piggymetrics-mongodb
     restart: always
     networks:
       - project_network
@@ -54,7 +54,7 @@ services:
   statistics-mongodb:
     environment:
       MONGODB_PASSWORD: $MONGODB_PASSWORD
-    build: mongodb
+    image: sqshq/piggymetrics-mongodb
     restart: always    
     networks:
       - project_network
