@@ -57,7 +57,7 @@ services:
     restart: always
     build: statistics-service
     ports:
-      - 9080:9080
+      - 9381:9381
     networks:
       - project_network
     
