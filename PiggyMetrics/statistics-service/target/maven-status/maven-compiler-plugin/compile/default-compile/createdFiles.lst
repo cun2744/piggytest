@@ -1,6 +1,5 @@
 com/piggymetrics/statistics/service/StatisticsService.class
 com/piggymetrics/statistics/domain/Item.class
-com/piggymetrics/statistics/service/security/CustomUserInfoTokenServices.class
 com/piggymetrics/statistics/domain/ExchangeRatesContainer.class
 com/piggymetrics/statistics/domain/timeseries/ItemMetric.class
 com/piggymetrics/statistics/client/ExchangeRatesClient.class
@@ -15,7 +14,6 @@ com/piggymetrics/statistics/repository/converter/DataPointIdWriterConverter.clas
 com/piggymetrics/statistics/service/StatisticsServiceImpl.class
 com/piggymetrics/statistics/domain/Account.class
 com/piggymetrics/statistics/client/ExchangeRatesClientFallback.class
-com/piggymetrics/statistics/config/ResourceServerConfig.class
 com/piggymetrics/statistics/controller/StatisticsController.class
 com/piggymetrics/statistics/domain/timeseries/StatisticMetric.class
 com/piggymetrics/statistics/repository/DataPointRepository.class

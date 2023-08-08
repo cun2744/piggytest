@@ -31,10 +31,11 @@ services:
       - test
 
   account-mongodb:
+    container_name: account-mongodb
     environment:
       INIT_DUMP: account-service-dump.js
       MONGODB_PASSWORD: $MONGODB_PASSWORD
-    build: account-mongodb
+    build: mongodb
     restart: always
     networks:
       - test
@@ -58,9 +59,10 @@ services:
 
     
   statistics-mongodb:
+    container_name: statistics-mongodb
     environment:
       MONGODB_PASSWORD: $MONGODB_PASSWORD
-    build: statistics-mongodb
+    build: mongodb
     restart: always
     networks:
       - test
