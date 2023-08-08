@@ -16,7 +16,7 @@ public class StatisticsController {
 	@Autowired
 	private StatisticsService statisticsService;
 
-    @GetMapping("/teststatd")
+    @RequestMapping(value = "/testget", method = RequestMethod.GET)
 	public String getCurrentAccountStatistics() {
 		return "static입니다.";
 	}
