@@ -51,24 +51,38 @@ function removeOauthTokenFromStorage() {
 
 function getCurrentAccount() {
 
-	var token = getOauthTokenFromStorage();
+	// var token = getOauthTokenFromStorage();
 	var account = null;
 
-	if (token) {
-		$.ajax({
-			url: 'accounts/current',
-			datatype: 'json',
-			type: 'get',
-			headers: {'Authorization': 'Bearer ' + token},
-			async: false,
-			success: function (data) {
-				account = data;
-			},
-			error: function () {
-				removeOauthTokenFromStorage();
-			}
-		});
-	}
+	// if (token) {
+	// 	$.ajax({
+	// 		url: 'accounts/current',
+	// 		datatype: 'json',
+	// 		type: 'get',
+	// 		headers: {'Authorization': 'Bearer ' + token},
+	// 		async: false,
+	// 		success: function (data) {
+	// 			account = data;
+	// 		},
+	// 		error: function () {
+	// 			removeOauthTokenFromStorage();
+	// 		}
+	// 	});
+	// }
+
+    $.ajax({
+        url: 'accounts/current',
+        datatype: 'json',
+        type: 'get',
+        // headers: {'Authorization': 'Bearer ' + token},
+        async: false,
+        success: function (data) {
+            account = data;
+        },
+        error: function () {
+            removeOauthTokenFromStorage();
+        }
+    });
 
 	return account;
 }
