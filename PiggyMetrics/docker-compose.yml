@@ -38,6 +38,14 @@ services:
     restart: always
     networks:
       - project_network
+  
+  statistics-mongodb:
+    environment:
+      MONGODB_PASSWORD: $MONGODB_PASSWORD
+    image: sqshq/piggymetrics-mongodb
+    restart: always    
+    networks:
+      - project_network
 
   statistics-service:
     container_name: statistics
@@ -51,10 +59,15 @@ services:
       - 7000:7000
     networks:
       - project_network
+    
 
-    
-    
 networks:
   project_network:
-    name : project_network
+    driver: bridge
+    # external: true
+    # internal: true
+
+# networks:
+#   project_network:
+#     name : project_network
     # external: true

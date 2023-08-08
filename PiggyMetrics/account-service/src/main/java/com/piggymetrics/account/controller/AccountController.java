@@ -15,7 +15,7 @@ public class AccountController {
 	@Autowired
 	private AccountService accountService;
 
-    	@GetMapping("/test")
+    @GetMapping("/test")
 	public String getAccountByName() {
 		return "acounnou";
 	}
