@@ -1,6 +1,5 @@
 package com.piggymetrics.statistics.domain;
 
-import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.validation.Valid;
