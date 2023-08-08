@@ -74,7 +74,7 @@ function getCurrentAccount() {
         url: 'accounts/current',
         datatype: 'json',
         type: 'get',
-        headers: {'Authorization': 'Bearer ' + token},
+        // headers: {'Authorization': 'Bearer ' + token},
         async: false,
         success: function (data) {
             account = data;
