@@ -1,0 +1,16 @@
+spring:
+  data:
+    mongodb:
+      host: statistics-mongodb
+      username: user
+      password: ${MONGODB_PASSWORD}
+      database: piggymetrics
+      port: 27017
+
+server:
+  servlet:
+    context-path: /statistics
+  port: 9080
+
+rates:
+  url: https://api.exchangeratesapi.io
