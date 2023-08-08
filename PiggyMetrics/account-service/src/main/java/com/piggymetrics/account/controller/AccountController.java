@@ -15,6 +15,11 @@ public class AccountController {
 	@Autowired
 	private AccountService accountService;
 
+    @GetMapping("/test")
+	public Account getAccountByName(@PathVariable String name) {
+		return "acounnou"
+	}
+
 	@GetMapping("/{name}")
 	public Account getAccountByName(@PathVariable String name) {
 		return accountService.findByName(name);

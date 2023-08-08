@@ -56,4 +56,5 @@ services:
     
 networks:
   project_network:
-    external: true
+    name : project_network
+    # external: true
