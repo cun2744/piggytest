@@ -39,24 +39,23 @@ services:
     networks:
       - project_network
   
-  statistics-mongodb:
-    environment:
-      MONGODB_PASSWORD: $MONGODB_PASSWORD
-    build: mongodb
-    restart: always    
-    networks:
-      - project_network
-
   statistics-service:
     container_name: statistics
     environment:
-      CONFIG_SERVICE_PASSWORD: $CONFIG_SERVICE_PASSWORD
       MONGODB_PASSWORD: $MONGODB_PASSWORD
       STATISTICS_SERVICE_PASSWORD: $STATISTICS_SERVICE_PASSWORD
     restart: always
     build: statistics-service
     ports:
       - 9080:9080
+    networks:
+      - project_network
+
+  statistics-mongodb:
+    environment:
+      MONGODB_PASSWORD: $MONGODB_PASSWORD
+    build: mongodb
+    restart: always    
     networks:
       - project_network
     
