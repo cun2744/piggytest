@@ -10,7 +10,7 @@ spring:
 server:
   servlet:
     context-path: /statistics
-  port: 7000
+  port: 9080
 
 rates:
   url: https://api.exchangeratesapi.io

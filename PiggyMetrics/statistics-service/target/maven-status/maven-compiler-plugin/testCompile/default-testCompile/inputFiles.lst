@@ -1,6 +1,0 @@
-/root/piggytest/PiggyMetrics/statistics-service/src/test/java/com/piggymetrics/statistics/StatisticsServiceApplicationTests.java
-/root/piggytest/PiggyMetrics/statistics-service/src/test/java/com/piggymetrics/statistics/client/ExchangeRatesClientTest.java
-/root/piggytest/PiggyMetrics/statistics-service/src/test/java/com/piggymetrics/statistics/service/ExchangeRatesServiceImplTest.java
-/root/piggytest/PiggyMetrics/statistics-service/src/test/java/com/piggymetrics/statistics/controller/StatisticsControllerTest.java
-/root/piggytest/PiggyMetrics/statistics-service/src/test/java/com/piggymetrics/statistics/service/StatisticsServiceImplTest.java
-/root/piggytest/PiggyMetrics/statistics-service/src/test/java/com/piggymetrics/statistics/repository/DataPointRepositoryTest.java
