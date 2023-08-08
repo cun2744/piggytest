@@ -42,7 +42,6 @@ services:
   statistics-mongodb:
     environment:
       MONGODB_PASSWORD: $MONGODB_PASSWORD
-    image: sqshq/piggymetrics-mongodb
     build: mongodb
     restart: always    
     networks:
