@@ -6,8 +6,7 @@ services:
     restart: always
     ports:
       - 80:4000
-    networks:
-      - test
+    networks: project_network
 
   banner-service:
     container_name: banners
@@ -15,8 +14,7 @@ services:
     restart: always
     ports:
       - 9090:9090
-    networks:
-      - test
+    networks: project_network
 
   account-service:
     container_name: accounts
@@ -27,18 +25,15 @@ services:
     restart: always
     ports:
       - 6000:6000
-    networks:
-      - test
+    networks: project_network
 
   account-mongodb:
-    container_name: account-mongodb
     environment:
       INIT_DUMP: account-service-dump.js
       MONGODB_PASSWORD: $MONGODB_PASSWORD
     build: mongodb
     restart: always
-    networks:
-      - test
+    networks: project_network
 
   statistics-service:
     container_name: statistics
@@ -50,30 +45,10 @@ services:
     build: statistics-service
     ports:
       - 7000:7000
-    networks:
-      - test
-    logging:
-      options:
-        max-size: "10m"
-        max-file: "10"
-
-    
-  statistics-mongodb:
-    container_name: statistics-mongodb
-    environment:
-      MONGODB_PASSWORD: $MONGODB_PASSWORD
-    build: mongodb
-    restart: always
-    networks:
-      - test
-    logging:
-      options:
-        max-size: "10m"
-        max-file: "10"
-
+    networks: project_network
 
     
     
 networks:
-  test:
-    name: test
+  project_network:
+    external: true
